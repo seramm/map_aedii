@@ -125,7 +125,20 @@ public class HashMap<K, V> implements Map<K, V> {
         return false;
     }
 
+    @Override
     public Collection<K> getKey(V value) {
-
+        Set<K> keys = new HashSet<>();
+        int numElem_aux = 0;
+        for (List<Par<K, V>> map_aux : map) {
+            for (Par<K, V> par_aux : map_aux) {
+                if (numElem_aux == numElem) {
+                    return keys;
+                }
+                if(par_aux.getValue().equals(value)) {
+                    keys.add(par_aux.getKey());
+                }
+            }
+        }
+        return keys;
     }
 }
