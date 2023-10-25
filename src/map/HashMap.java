@@ -77,7 +77,7 @@ public class HashMap<K, V> implements Map<K, V> {
     public Set<K> keySet() {
         Set<K> keys = new HashSet<>();
         for (int i = 0; keys.size() < numElem; i++) {
-            for(int j = 0; j < map[i].size() && keys.size() < numElem; j++) {
+            for (int j = 0; j < map[i].size() && keys.size() < numElem; j++) {
                 keys.add(map[i].get(j).getKey());
             }
         }
