@@ -84,8 +84,15 @@ public class HashMap<K, V> implements Map<K, V> {
         return keys;
     }
 
+    @Override
     public Collection<V> values() {
-
+        Set<V> values = new HashSet<>();
+        for (List<Par<K, V>> map_aux : map) {
+            for (Par<K, V> par_aux : map_aux) {
+                values.add(par_aux.getValue());
+            }
+        }
+        return values;
     }
 
     public boolean containsKey(K key) {
