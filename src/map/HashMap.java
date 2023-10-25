@@ -61,7 +61,7 @@ public class HashMap<K, V> implements Map<K, V> {
 
     public V remove(K key) {
         V existing = get(key);
-        if(existing != null) {
+        if (existing != null) {
             int index = map[functionHash(key)].indexOf(new Par<>(key, existing));
             map[functionHash(key)].remove(index);
         }
