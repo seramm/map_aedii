@@ -102,7 +102,7 @@ public class HashMap<K, V> implements Map<K, V> {
         }
         for (List<Par<K, V>> map_aux : map) {
             for (Par<K, V> par_aux : map_aux) {
-                if (par_aux.getKey() == key) {
+                if (par_aux.getKey().equals(key)) {
                     return true;
                 }
             }
@@ -117,7 +117,7 @@ public class HashMap<K, V> implements Map<K, V> {
         }
         for (List<Par<K, V>> map_aux : map) {
             for (Par<K, V> par_aux : map_aux) {
-                if (par_aux.getValue() == value) {
+                if (par_aux.getValue().equals(value)) {
                     return true;
                 }
             }
