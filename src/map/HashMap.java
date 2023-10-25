@@ -30,14 +30,17 @@ public class HashMap<K, V> implements Map<K, V> {
         return Math.abs(key.hashCode()) % map.length;
     }
 
+    @Override
     public int size() {
         return numElem;
     }
 
+    @Override
     public boolean isEmpty() {
         return numElem == 0;
     }
 
+    @Override
     public V get(K key) {
         for (Par<K, V> i : map[functionHash(key)]) {
             if (key.equals(i.getKey())) {
@@ -47,6 +50,7 @@ public class HashMap<K, V> implements Map<K, V> {
         return null;
     }
 
+    @Override
     public V put(K key, V value) {
         V existing = get(key);
         if (existing != null) {
@@ -59,6 +63,7 @@ public class HashMap<K, V> implements Map<K, V> {
         return existing;
     }
 
+    @Override
     public V remove(K key) {
         V existing = get(key);
         if (existing != null) {
@@ -68,6 +73,7 @@ public class HashMap<K, V> implements Map<K, V> {
         return existing;
     }
 
+    @Override
     public Set<K> keySet() {
         Set<K> keys = new HashSet<>();
         for (int i = 0; keys.size() < numElem; i++) {
