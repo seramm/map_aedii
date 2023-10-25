@@ -125,7 +125,7 @@ public class HashMap<K, V> implements Map<K, V> {
         return false;
     }
 
-    public List<K> getKey(V value) {
+    public Collection<K> getKey(V value) {
 
     }
 }

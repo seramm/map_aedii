@@ -28,5 +28,5 @@ public interface Map<K, V> {
 
     public boolean containsValue(V value);
 
-    public List<K> getKey(V value);
+    public Collection<K> getKey(V value);
 }
