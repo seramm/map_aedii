@@ -95,8 +95,19 @@ public class HashMap<K, V> implements Map<K, V> {
         return values;
     }
 
+    @Override
     public boolean containsKey(K key) {
-
+        if (numElem == 0) {
+            return false;
+        }
+        for (List<Par<K, V>> map_aux : map) {
+            for (Par<K, V> par_aux : map_aux) {
+                if (par_aux.getKey() == key) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean containsValue(V value) {
