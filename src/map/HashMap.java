@@ -111,7 +111,17 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     public boolean containsValue(V value) {
-
+        if (numElem == 0) {
+            return false;
+        }
+        for (List<Par<K, V>> map_aux : map) {
+            for (Par<K, V> par_aux : map_aux) {
+                if (par_aux.getKey() == key) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public List<K> getKey(V value) {
