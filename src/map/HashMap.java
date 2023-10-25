@@ -134,7 +134,7 @@ public class HashMap<K, V> implements Map<K, V> {
                 if (numElem_aux == numElem) {
                     return keys;
                 }
-                if(par_aux.getValue().equals(value)) {
+                if (par_aux.getValue().equals(value)) {
                     keys.add(par_aux.getKey());
                 }
             }
