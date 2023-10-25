@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Set;
+import java.util.HashSet;
 
 public class HashMap<K, V> implements Map<K, V> {
 
@@ -68,7 +69,13 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     public Set<K> keySet() {
-
+        Set<K> keys = new HashSet<>();
+        for (int i = 0; keys.size() < numElem; i++) {
+            for(int j = 0; j < map[i].size() && keys.size() < numElem; j++) {
+                keys.add(map[i].get(j).getKey());
+            }
+        }
+        return keys;
     }
 
     public Collection<V> values() {
