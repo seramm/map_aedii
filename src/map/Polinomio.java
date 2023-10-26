@@ -14,4 +14,14 @@ public class Polinomio {
     public Polinomio() {
         polinomio = new HashMap<>();
     }
+
+    public int grade() {
+        int max = 0;
+        for(int i : polinomio.keySet()) {
+            if(i > max) {
+                max = i;
+            }
+        }
+        return max;
+    }
 }
