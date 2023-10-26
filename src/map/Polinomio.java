@@ -9,16 +9,17 @@ package map;
  * @author seram
  */
 public class Polinomio {
+
     private Map<Integer, Double> polinomio;
-            
+
     public Polinomio() {
         polinomio = new HashMap<>();
     }
 
     public int grade() {
         int max = 0;
-        for(int i : polinomio.keySet()) {
-            if(i > max) {
+        for (int i : polinomio.keySet()) {
+            if (i > max) {
                 max = i;
             }
         }
