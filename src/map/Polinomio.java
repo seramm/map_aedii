@@ -9,7 +9,7 @@ package map;
  * @author seram
  */
 public class Polinomio {
-    private Map polinomio;
+    private Map<Integer, Double> polinomio;
             
     public Polinomio() {
         polinomio = new HashMap<>();
