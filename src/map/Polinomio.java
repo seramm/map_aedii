@@ -30,8 +30,8 @@ public class Polinomio {
         if (exponente < 0) {
             throw new IllegalArgumentException("Polinomio: exponente negativo no valido");
         }
-        double coeficiente = polinomio.get(exponente);
-        if (polinomio.get(exponente) == null) {
+        Double coeficiente = polinomio.get(exponente);
+        if (coeficiente == null) {
             return 0;
         }
         return coeficiente;

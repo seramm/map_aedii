@@ -22,7 +22,7 @@ public interface Map<K, V> {
 
     public Set<K> keySet();
 
-    public Collection<V> values();
+    public List<V> values();
 
     public boolean containsKey(K key);
 

@@ -15,7 +15,7 @@ public class HashMap<K, V> implements Map<K, V> {
     private List<Par<K, V>>[] map;
     private int numElem;
 
-    public void HashMap(int size_array) throws IllegalArgumentException {
+    public HashMap(int size_array) throws IllegalArgumentException {
         if (size_array < 0) {
             throw new IllegalArgumentException("HashMap: size is negative");
         }
@@ -24,6 +24,10 @@ public class HashMap<K, V> implements Map<K, V> {
         for (int i = 0; i < size_array; i++) {
             map[i] = new LinkedList<>();
         }
+    }
+
+    public HashMap() {
+        this(10);
     }
 
     private int functionHash(K key) {
@@ -85,8 +89,8 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     @Override
-    public Collection<V> values() {
-        Set<V> values = new HashSet<>();
+    public List<V> values() {
+        List<V> values = new LinkedList<>();
         for (List<Par<K, V>> map_aux : map) {
             for (Par<K, V> par_aux : map_aux) {
                 values.add(par_aux.getValue());
