@@ -16,7 +16,7 @@ public class Polinomio {
         polinomio = new HashMap<>();
     }
 
-    public int grade() {
+    public int grado() {
         int max = 0;
         for (int i : polinomio.keySet()) {
             if (i > max) {
