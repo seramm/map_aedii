@@ -25,4 +25,15 @@ public class Polinomio {
         }
         return max;
     }
+
+    public double getCoeficiente(int exponente) throws IllegalArgumentException {
+        if (exponente < 0) {
+            throw new IllegalArgumentException("Polinomio: exponente negativo no valido");
+        }
+        double coeficiente = polinomio.get(exponente);
+        if (polinomio.get(exponente) == null) {
+            return 0;
+        }
+        return coeficiente;
+    }
 }
