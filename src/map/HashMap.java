@@ -57,11 +57,15 @@ public class HashMap<K, V> implements Map<K, V> {
     @Override
     public V put(K key, V value) {
         V existing = get(key);
+        int index = functionHash(key);
         if (existing != null) {
-            int index = map[functionHash(key)].indexOf(new Par<>(key, value));
+            int indexPar = 0;
+            while (map[index].get(indexPar).getKey() != key) {
+                indexPar++;
+            }
             map[functionHash(key)].set(index, new Par<>(key, value));
         } else {
-            map[functionHash(key)].add(new Par<>(key, value));
+            map[index].add(new Par<>(key, value));
             numElem++;
         }
         return existing;
@@ -71,8 +75,12 @@ public class HashMap<K, V> implements Map<K, V> {
     public V remove(K key) {
         V existing = get(key);
         if (existing != null) {
-            int index = map[functionHash(key)].indexOf(new Par<>(key, existing));
-            map[functionHash(key)].remove(index);
+            int index = functionHash(key);
+            int indexPar = 0;
+            while (map[index].get(indexPar).getKey() != key) {
+                indexPar++;
+            }
+            map[index].remove(indexPar);
         }
         return existing;
     }
