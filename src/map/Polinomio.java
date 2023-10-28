@@ -36,4 +36,17 @@ public class Polinomio {
         }
         return coeficiente;
     }
+
+    public void anhadirTermino(int exponente, double coeficiente) throws IllegalArgumentException {
+        if (exponente < 0 || coeficiente == 0) {
+            throw new IllegalArgumentException("Polinomio: parametros no validos");
+        }
+        double coefAux = getCoeficiente(exponente);
+        double sumaCoef = coefAux + coeficiente;
+        if (sumaCoef == 0) {
+            polinomio.remove(exponente);
+        } else {
+            polinomio.put(exponente, sumaCoef);
+        }
+    }
 }
