@@ -66,7 +66,7 @@ public class Polinomio {
         Polinomio polinomioNuevo = this;
         Set<Integer> a = p.polinomio.keySet();
         for (Integer i : p.polinomio.keySet()) {
-            polinomioNuevo.anhadirTermino(i, polinomioNuevo.polinomio.get(i));
+            polinomioNuevo.anhadirTermino(i, p.polinomio.get(i));
         }
         return polinomioNuevo;
     }
