@@ -49,4 +49,11 @@ public class Polinomio {
             polinomio.put(exponente, sumaCoef);
         }
     }
+
+    public void eliminarTermino(int exponente) throws IllegalArgumentException {
+        if (exponente < 0) {
+            throw new IllegalArgumentException("Polinomio: exponente no valido");
+        }
+        polinomio.remove(exponente);
+    }
 }
