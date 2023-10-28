@@ -23,14 +23,5 @@ jobs:
         distribution: 'oracle'
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 21
-      uses: actions/setup-java@v3
-      with:
-        java-version: '21'
-        distribution: 'oracle'
     - name: Run test
       run: ant test
