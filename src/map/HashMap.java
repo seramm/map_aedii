@@ -81,6 +81,7 @@ public class HashMap<K, V> implements Map<K, V> {
                 indexPar++;
             }
             map[index].remove(indexPar);
+            numElem--;
         }
         return existing;
     }
