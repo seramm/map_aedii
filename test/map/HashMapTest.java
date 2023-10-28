@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -107,6 +108,8 @@ public void testGetValores() {
     while (it.hasNext()) {
         result.add(it.next());
     }
+    Collections.sort(expResult);
+    Collections.sort(result);
     assertArrayEquals(expResult.toArray(new String[0]), result.toArray(new String[0]));
 }
 
@@ -129,6 +132,8 @@ public void testGetClaves() {
     while (it.hasNext()) {
         result.add(it.next());
     }
+    Collections.sort(expResult);
+    Collections.sort(result);
     assertArrayEquals(expResult.toArray(new String[0]), result.toArray(new String[0]));
 }    
 }
