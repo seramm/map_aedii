@@ -23,3 +23,5 @@ jobs:
         distribution: 'oracle'
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
+    - name: Run test
+      run: ant test
