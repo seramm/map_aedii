@@ -63,7 +63,7 @@ public class HashMap<K, V> implements Map<K, V> {
             while (map[index].get(indexPar).getKey() != key) {
                 indexPar++;
             }
-            map[functionHash(key)].set(index, new Par<>(key, value));
+            map[functionHash(key)].set(indexPar, new Par<>(key, value));
         } else {
             map[index].add(new Par<>(key, value));
             numElem++;
