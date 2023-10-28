@@ -4,6 +4,8 @@
  */
 package map;
 
+import java.util.Set;
+
 /**
  *
  * @author seram
@@ -55,5 +57,17 @@ public class Polinomio {
             throw new IllegalArgumentException("Polinomio: exponente no valido");
         }
         polinomio.remove(exponente);
+    }
+
+    public Polinomio suma(Polinomio p) throws NullPointerException {
+        if (p == null) {
+            throw new NullPointerException("Polinomio: p es nul");
+        }
+        Polinomio polinomioNuevo = this;
+        Set<Integer> a = p.polinomio.keySet();
+        for (Integer i : p.polinomio.keySet()) {
+            polinomioNuevo.anhadirTermino(i, polinomioNuevo.polinomio.get(i));
+        }
+        return polinomioNuevo;
     }
 }
