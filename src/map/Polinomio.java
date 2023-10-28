@@ -70,4 +70,16 @@ public class Polinomio {
         }
         return polinomioNuevo;
     }
+
+    public Polinomio derivada() {
+        Polinomio polinomioNuevo = new Polinomio();
+        Set<Integer> keys = polinomio.keySet();
+        for (Integer i : keys) {
+            if (i != 0) {
+                Double coef = this.getCoeficiente(i);
+                polinomioNuevo.anhadirTermino(i - 1, coef * i);
+            }
+        }
+        return polinomioNuevo;
+    }
 }
