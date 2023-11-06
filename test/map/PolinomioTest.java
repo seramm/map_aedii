@@ -174,7 +174,7 @@ public class PolinomioTest {
         instance.anhadirTermino(0, -5);
         Polinomio result = instance.suma(p);
         Polinomio expResult = new Polinomio();
-        iguales(expResult, result);
+        assertTrue(iguales(expResult, result));
     }
 
     @Test
@@ -194,7 +194,7 @@ public class PolinomioTest {
         expResult.anhadirTermino(2, 6);
         expResult.anhadirTermino(1, -1);
         expResult.anhadirTermino(0, 2);
-        iguales(expResult, result);
+        assertTrue(iguales(expResult, result));
     }
 
     /**
@@ -211,6 +211,6 @@ public class PolinomioTest {
         Polinomio expResult = new Polinomio();
         expResult.anhadirTermino(2, 15);
         expResult.anhadirTermino(0, 6);
-        iguales(expResult, result);
+        assertTrue(iguales(expResult, result));
     }
 }
