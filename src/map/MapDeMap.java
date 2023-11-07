@@ -20,30 +20,37 @@ public class MapDeMap<E, T> implements Grafo<E, T> {
         mapaVertices = new HashMap<>();
     }
 
+    @Override
     public boolean esVacio() {
         return mapaVertices.isEmpty();
     }
 
+    @Override
     public boolean estaVertice(Vertice<E> v) {
         return mapaVertices.containsKey(v);
     }
 
+    @Override
     public boolean estaArco(Arco<E, T> a) {
-        for (Vertice<E> vert1 : mapaVertices.keySet()) {
-            for (Vertice<E> vert2 : mapaVertices.get(vert1).keySet()) {
-                return vert1 == a.getDestino() && vert2 == a.getOrigen() && mapaVertices.get(vert1).get(vert2) == a.getEtiqueta();
-            }
-        }
-        return false;
+        return this.mapaVertices.get(a.getOrigen()) != null
+                && this.mapaVertices.get(a.getOrigen()).get(a.getDestino()) != null
+                && this.mapaVertices.get(a.getDestino()).equals(a.getEtiqueta());
     }
 
-    public Iterator<Vertice<E>> vertices();
+    @Override
+    public Iterator<Vertice<E>> vertices() {
+        return mapaVertices.keySet().iterator();
+    }
 
-    public Iterator<Arco<E, T>> arcos();
+    @Override
+    public Iterator<Arco<E, T>> arcos() {
 
+    }
+
+    @Override
     public Iterator<Vertice<E>> adyacentes(Vertice<E> v) {
         List<Vertice<E>> ady = new LinkedList<>();
-        for (Arco<E, T> arc : listArcos) {
+        for (Arco<E, T> arc : arcos()) {
             if (arc.getOrigen().equals(v)) {
                 ady.add(arc.getDestino());
             }
@@ -51,11 +58,15 @@ public class MapDeMap<E, T> implements Grafo<E, T> {
         return ady.iterator();
     }
 
+    @Override
     public void insertarVertice(Vertice<E> v);
 
+    @Override
     public void insertarArco(Arco<E, T> a);
 
+    @Override
     public void eliminarVertice(Vertice<E> v);
 
+    @Override
     public void eliminarArco(Arco<E, T> a);
 }
